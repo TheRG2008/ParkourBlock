@@ -5,6 +5,15 @@ public class Start : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene(1);
+        int currentLevl = PlayerPrefs.GetInt("GameLevel");
+        if (currentLevl > 0)
+        {
+            SceneManager.LoadScene(currentLevl + 1);
+        }
+        else
+        {
+            SceneManager.LoadScene(1);
+        }
+        
     }
 }

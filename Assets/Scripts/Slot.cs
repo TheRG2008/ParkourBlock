@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -30,7 +29,11 @@ public class Slot : MonoBehaviour
             }
         }
     }
-    public bool IsOpen { get => _isOpen; set => _isOpen = value; }
+    public bool IsOpen 
+    { 
+        get => _isOpen; 
+        set => _isOpen = value; 
+    }
 
     public void ChangeText(int lvl)
     {
@@ -53,6 +56,15 @@ public class Slot : MonoBehaviour
     {
         _isOpen = true;
         _lock.SetActive(false);
+    }
+
+    public void GetLvlScene()
+    {
+        if(_isOpen)
+        {
+            SceneManager.LoadScene(_slotNumber);
+        }
+        
     }
 
     

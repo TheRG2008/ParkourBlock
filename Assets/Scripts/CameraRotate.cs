@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraRotate : MonoBehaviour
@@ -8,7 +6,6 @@ public class CameraRotate : MonoBehaviour
     private float _yRotaye;
     private float _zRotaye;
     private float _xRotation = 0f;
-
     
     void Update()
     {
@@ -20,10 +17,6 @@ public class CameraRotate : MonoBehaviour
         float mouseY = Input.GetAxis("Mouse Y") * _sensitivity * Time.deltaTime;
         _xRotation -= mouseY;
         _xRotation = Mathf.Clamp(_xRotation, -50f, 50f);
-
-        transform.localRotation = Quaternion.Euler(_xRotation, 0f, 0f);
-        //_zRotaye = Input.GetAxis("Mouse Y");
-
-        //transform.Rotate(_zRotaye * _sensitivity * -1 * Time.deltaTime, 0, 0);
+        transform.localRotation = Quaternion.Euler(_xRotation, 0f, 0f);        
     }
 }
