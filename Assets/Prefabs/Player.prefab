@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.057500005, y: 0.7500002, z: -0.7275}
+  m_LocalPosition: {x: 0.057500005, y: 0.7500002, z: -0.087}
   m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_Children: []
   m_Father: {fileID: 2783872688956135353}
@@ -57,8 +57,8 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
+  far clip plane: 992.69
+  field of view: 70
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -83,7 +83,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!114 &3887951521455466059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b2be514f74ca884b90ecfeb00079a92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sensitivity: 100
+  _sensitivity: 350
 --- !u!1 &7358918781227258111
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,7 +229,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundedPlayer: 0
   playerSpeed: 2
-  _sensitivity: 150
+  jumpHeight: 0.7
+  _sensitivity: 350
 --- !u!114 &852252682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,3 +243,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6665a5462dae1244b82b90d1334e3e10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _deathCount: 0
+  _lvl: 0

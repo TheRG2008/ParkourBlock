@@ -9,7 +9,13 @@ public class Portal : MonoBehaviour
     {
         if (other.GetComponent<Player>())
         {
-            SceneManager.LoadScene(0);
+            int currentScene = SceneManager.GetActiveScene().buildIndex;
+            Player player = other.GetComponent<Player>();
+            
+            PlayerPrefs.SetInt("StarCountLevel" + (currentScene - 1).ToString() , player.DeathCount);
+            PlayerPrefs.SetInt("GameLevel", player.Lvl);            
+            SceneManager.LoadScene(currentScene + 1);
+            
         }
     }
 }

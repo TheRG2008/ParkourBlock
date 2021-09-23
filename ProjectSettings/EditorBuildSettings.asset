@@ -7,5 +7,11 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/Main.unity
+    guid: c6f5e4ced4dc2444db89f6a8d1e00567
+  - enabled: 1
+    path: Assets/Scenes/LvL1.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/LvL2.unity
+    guid: bd4b652bb64f05a4a86037b4ccf99760
   m_configObjects: {}

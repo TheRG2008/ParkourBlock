@@ -8,15 +8,15 @@ public class Controller : MonoBehaviour
     private Vector3 playerVelocity;
     [SerializeField] private bool groundedPlayer;
     [SerializeField] private float playerSpeed = 2.0f;
-    private float jumpHeight = 1.0f;
+    [SerializeField] private float jumpHeight = 1.0f;
     private float gravityValue = -9.81f;
     private float _yRotaye;
-    [SerializeField] private float _sensitivity = 150f;
+    [SerializeField] private float _sensitivity = 400f;
 
     private void Start()
     {
         controller = GetComponent<CharacterController>();
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
