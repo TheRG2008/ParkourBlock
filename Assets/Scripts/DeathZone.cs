@@ -10,7 +10,8 @@ public class DeathZone : MonoBehaviour
     {
         if (other.GetComponent<Player>())
         {
-            other.GetComponent<Player>().Respawn();         
+            other.GetComponent<Player>().Respawn();
+            Debug.Log("1");
 
         }
     }

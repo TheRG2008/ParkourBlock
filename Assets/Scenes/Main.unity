@@ -201,6 +201,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 189507059}
   m_CullTransparentMesh: 1
+--- !u!1 &278890306
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 278890308}
+  - component: {fileID: 278890307}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &278890307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278890306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67347744926a3f3439541c35a8053585, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelsCount: 30
+--- !u!4 &278890308
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278890306}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.49934673, y: 7.402507, z: 26.350891}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &496261542
 GameObject:
   m_ObjectHideFlags: 0
@@ -709,8 +753,8 @@ Camera:
   m_GameObject: {fileID: 1385795939}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.7075472, g: 0.57071024, b: 0.6788418, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1223,6 +1267,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1705937272}
     m_Modifications:
+    - target: {fileID: 1277978782817230021, guid: c23a3569476a8ca46b372ca448b9bb94, type: 3}
+      propertyPath: _isOpen
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2443630619727046183, guid: c23a3569476a8ca46b372ca448b9bb94, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1

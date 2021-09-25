@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
         GetComponent<CharacterController>().enabled = false;
         transform.position = _firstPosition;
         GetComponent<CharacterController>().enabled = true;
-        _deathCount--;
+        DeathCount--;
     }
 
 

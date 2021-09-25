@@ -5,14 +5,16 @@ using UnityEngine;
 public class SlotController : MonoBehaviour
 {
     [SerializeField] private GameObject[] _slot;   
-    private int _gameLevel;
+    private int _activeGameLevel;
     private List<int> _deathCount;
+    
     
     private void Awake()
     {
         LoadSaveData();
-        StarCountChange();                
-        OpenNextLevl();        
+        StarCountChange();
+        UpdateSlots();
+        //OpenNextLevl();        
     }
     private void Start()
     {
@@ -21,9 +23,9 @@ public class SlotController : MonoBehaviour
 
     public void LoadSaveData()
     {
-        _gameLevel = PlayerPrefs.GetInt("GameLevel");
+        _activeGameLevel = PlayerPrefs.GetInt("GameLevel");        
         _deathCount = new List<int>();
-        for (int i = 0; i < _gameLevel; i++)
+        for (int i = 0; i < _activeGameLevel; i++)
         {
             int deathCount = PlayerPrefs.GetInt("StarCountLevel" + i.ToString());
             _deathCount.Add(deathCount);
@@ -39,10 +41,23 @@ public class SlotController : MonoBehaviour
             slot.StarUpdate();
         }
     }
+    private void UpdateSlots ()
+    {
+        int levelsCount = PlayerPrefs.GetInt("LevelsCount");
+        for (int i = 0; i < levelsCount; i++)
+        {
+            if(PlayerPrefs.GetInt("StatusLevel" + (i + 1).ToString()) == 1)
+            {
+                Slot slot = _slot[i].GetComponent<Slot>();
+                slot.UnLockLvl();
+            }
+           
+        }
+    }
 
     public void OpenNextLevl()
     {
-        for (int i = 0; i <= _gameLevel; i++)
+        for (int i = 0; i <= _activeGameLevel; i++)
         {
             Slot slot = _slot[i].GetComponent<Slot>();
             slot.UnLockLvl();

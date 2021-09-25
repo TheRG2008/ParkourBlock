@@ -3,8 +3,6 @@ using UnityEngine;
 public class CameraRotate : MonoBehaviour
 {
     [SerializeField] private float _sensitivity = 400f;
-    private float _yRotaye;
-    private float _zRotaye;
     private float _xRotation = 0f;
     
     void Update()
