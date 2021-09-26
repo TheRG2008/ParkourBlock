@@ -6,9 +6,16 @@ public class Player : MonoBehaviour
     private int _deathCount;
     private int _lvl;
     private Vector3 _firstPosition;
+    private bool _isALife = true;
+
+    public bool IsALife 
+    {
+        get => _isALife;
+        set => _isALife = value;
+    }
 
     public void Start()
-    {
+    {       
         _deathCount = 3;
         _lvl = SceneManager.GetActiveScene().buildIndex;
     }
@@ -40,7 +47,7 @@ public class Player : MonoBehaviour
         GetComponent<CharacterController>().enabled = false;
         transform.position = _firstPosition;
         GetComponent<CharacterController>().enabled = true;
-        DeathCount--;
+        DeathCount--;       
     }
 
 

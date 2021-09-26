@@ -11,10 +11,11 @@ public class SlotController : MonoBehaviour
     
     private void Awake()
     {
+        UpdateSlots();
         LoadSaveData();
         StarCountChange();
-        UpdateSlots();
-        //OpenNextLevl();        
+        //OpenNextLevl();
+
     }
     private void Start()
     {
@@ -23,7 +24,8 @@ public class SlotController : MonoBehaviour
 
     public void LoadSaveData()
     {
-        _activeGameLevel = PlayerPrefs.GetInt("GameLevel");        
+
+        //_activeGameLevel = PlayerPrefs.GetInt("GameLevel");
         _deathCount = new List<int>();
         for (int i = 0; i < _activeGameLevel; i++)
         {
@@ -48,6 +50,7 @@ public class SlotController : MonoBehaviour
         {
             if(PlayerPrefs.GetInt("StatusLevel" + (i + 1).ToString()) == 1)
             {
+                _activeGameLevel++;
                 Slot slot = _slot[i].GetComponent<Slot>();
                 slot.UnLockLvl();
             }
@@ -55,14 +58,14 @@ public class SlotController : MonoBehaviour
         }
     }
 
-    public void OpenNextLevl()
-    {
-        for (int i = 0; i <= _activeGameLevel; i++)
-        {
-            Slot slot = _slot[i].GetComponent<Slot>();
-            slot.UnLockLvl();
-        }
-    }
+    //public void OpenNextLevl()
+    //{
+    //    for (int i = 0; i <= _activeGameLevel; i++)
+    //    {
+    //        Slot slot = _slot[i].GetComponent<Slot>();
+    //        slot.UnLockLvl();
+    //    }
+    //}
 
     public void GetSlotNumbers()
     {
