@@ -17,7 +17,7 @@ public class DeathZone : MonoBehaviour
                 Debug.Log("1");
             }
             other.GetComponent<Player>().IsALife = true;
-
+            Physics.IgnoreCollision(other, GetComponent<Collider>());
         }
     }
 
