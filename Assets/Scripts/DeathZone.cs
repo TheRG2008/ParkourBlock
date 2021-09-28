@@ -7,17 +7,18 @@ public class DeathZone : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<Player>())
+        Player playerClass;
+        if (/*other.GetComponent<Player>()*/ other.TryGetComponent(out playerClass))
         {
-            Player player = other.GetComponent<Player>();
-            if (player.IsALife)
-            {
-                player.IsALife = false;
-                player.Respawn();
+            //Player player = other.GetComponent<Player>();
+            //if (playerClass.IsALife)
+            //{
+                //playerClass.IsALife = false;
+                playerClass.Respawn();
                 Debug.Log("1");
-            }
-            other.GetComponent<Player>().IsALife = true;
-            Physics.IgnoreCollision(other, GetComponent<Collider>());
+            //}
+            //other.GetComponent<Player>().IsALife = true;
+            //Physics.IgnoreCollision(other, GetComponent<Collider>());
         }
     }
 
